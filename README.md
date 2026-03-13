@@ -1,4 +1,4 @@
-# 📊 Social Media Engagement Analysis
+# 📊 Social Media Sentiment & Engagement Analysis
 
 A modular Python pipeline for loading, cleaning, and visualising social media engagement data across platforms, post types, and time periods.
 
@@ -7,10 +7,11 @@ A modular Python pipeline for loading, cleaning, and visualising social media en
 ## 📁 Project Structure
 
 ```
-social_media_analysis/
+socialmedia_sentiment_engagement_analysis_machine_learning/
 ├── src/
-│   └── analysis.py        # Core pipeline (load → clean → analyse → visualise)
-├── outputs/               # Auto-generated charts (gitignored)
+│   ├── analysis.py                    # Optimized modular pipeline
+│   └── socialmediadataanalysis.py     # Original notebook reference
+├── assets/                            # Chart images
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -22,8 +23,8 @@ social_media_analysis/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/social-media-analysis.git
-cd social-media-analysis
+git clone https://github.com/dipanburja/socialmedia_sentiment_engagement_analysis_machine_learning.git
+cd socialmedia_sentiment_engagement_analysis_machine_learning
 ```
 
 ### 2. Create a virtual environment
@@ -43,31 +44,46 @@ pip install -r requirements.txt
 python src/analysis.py social_media_engagement.csv
 ```
 
-All charts are saved to the `outputs/` folder automatically.
-
 ---
 
-## 📊 What the Pipeline Produces
+## 📊 Sample Output Charts
 
-| Chart | Description |
-|---|---|
-| `platform_share.png` | Pie chart of average engagement per platform |
-| `daily_engagement_platform.png` | Grouped bar chart by day and platform |
-| `posts_per_day.png` | Post volume by day of the week |
-| `hourly_volume_vs_engagement.png` | Dual-axis: post count vs. avg engagement by hour |
-| `post_type_distribution.png` | Box plot of engagement per post type |
-| `sentiment_engagement.png` | Bar chart of engagement by sentiment |
-| `correlation_heatmap.png` | Likes / shares / comments correlation matrix |
-| `monthly_trend.png` | Monthly engagement trend line |
-| `post_type_pies.png` | Post types by volume and by total engagement |
-| `strategy_heatmap.png` | Engagement heatmap: post type × platform |
-| `dashboard.png` | 4-panel executive dashboard |
+### 🏆 Executive Dashboard — All Summary Report
+![All Summary Report](assets/all_summary_report.png)
+
+### 🌐 Average Engagement by Platform
+![Average Like Per Platform](assets/average_like_per_platform.png)
+
+### 📅 Average Engagement by Day and Platform
+![Average Engagement Day and Platform](assets/average_engagement_day_and_platform.png)
+
+### 💬 Average Engagement by Sentiment Type
+![Average Engagement For Sentiment Type](assets/average_engagement_for_sentiment_type.png)
+
+### 🥧 Contribution of Post Types (by Engagement)
+![Contribution of Post Type Engagement](assets/contribution_of_posttype_engagement.png)
+
+### 🥧 Contribution of Post Types (by Volume)
+![Contribution of Post Type](assets/contribution_of_posttype.png)
+
+### 🔗 Correlation Between Post Engagement
+![Correlation Between Post Engagement](assets/corelation_between_post_engagement.png)
+
+### 📈 Engagement Trend Over Month
+![Engagement Trend Over Month](assets/enagement_trend_over_month.png)
+
+### 📆 Number of Posts Per Day
+![Number of Posts Per Day](assets/number_post_per_day.png)
+
+### 📦 Engagement Distribution by Post Type
+![Post Type](assets/post_type.png)
+
+### 🕐 Volume of Posts vs. Average Engagement by Hour
+![Volume of Posts Per Hour](assets/volumn_of_post_per_hour.png)
 
 ---
 
 ## 📦 Dataset Format
-
-The pipeline expects a CSV with at least these columns:
 
 | Column | Type | Description |
 |---|---|---|
@@ -81,17 +97,16 @@ The pipeline expects a CSV with at least these columns:
 | `shares` | int | Share count |
 | `sentiment_score` | string | `positive`, `neutral`, or `negative` |
 
-Missing values and non-numeric noise are handled automatically.
-
 ---
 
-## 🔑 Key Findings (from sample dataset)
+## 🔑 Key Findings
 
 - **Instagram** drives the highest average engagement (42.2%)
 - **Polls and videos** outperform other post types
 - **1 AM and 9 PM** are peak engagement hours
 - **Negative sentiment** posts receive slightly higher engagement than positive ones
 - **Wednesday and Friday** generate the most total interactions
+- **Likes** have a very strong correlation (0.98) with overall engagement
 
 ---
 
@@ -100,7 +115,7 @@ Missing values and non-numeric noise are handled automatically.
 - **pandas** – data wrangling
 - **NumPy** – numerical operations
 - **Matplotlib / Seaborn** – visualisation
-- **scikit-learn** – (available for ML extensions)
+- **scikit-learn** – ML extensions
 
 ---
 
